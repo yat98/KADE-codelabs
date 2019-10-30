@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">KotlinFirst</string>
     <string name="button_label">Ubah Judul</string>
+    <string name="number_activity_label">Number Activity</string>
 </resources>
