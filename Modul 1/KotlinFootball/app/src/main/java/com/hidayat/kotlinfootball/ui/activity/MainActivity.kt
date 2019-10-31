@@ -3,11 +3,11 @@ package com.hidayat.kotlinfootball.ui.activity
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.widget.Toast
 import com.hidayat.kotlinfootball.R
 import com.hidayat.kotlinfootball.model.Club
 import com.hidayat.kotlinfootball.model.adapter.ClubAdapter
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     private var clubs: MutableList<Club> = mutableListOf()
@@ -16,11 +16,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val rcClub = findViewById<RecyclerView>(R.id.rv_club)
-
         initData()
-        rcClub.layoutManager = LinearLayoutManager(this)
-        rcClub.adapter = ClubAdapter(this, clubs) {
+        rv_club.layoutManager = LinearLayoutManager(this)
+        rv_club.adapter = ClubAdapter(this, clubs) {
             val toast = Toast.makeText(this, it.name, Toast.LENGTH_SHORT)
             toast.show()
         }
